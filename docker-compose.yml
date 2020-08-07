@@ -1,4 +1,6 @@
+#phiên bản của docker-compose
 version: '2'
+# mỗi service tạo ra 1 contaniner
 services:
   mysql:
     image: mysql:5.7.31
@@ -10,6 +12,7 @@ services:
 
   bookstack-cms:
     image: bookstack-cms
+    #Sử dụng khi chúng ta không xây dựng container từ image có sẵn nữa mà xây dựng nó từ Dockerfile.
     build: .
     ports: 
       - 8080:8080

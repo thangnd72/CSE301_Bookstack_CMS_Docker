@@ -1,3 +1,4 @@
+# môi trường sử dụng là alpine
 FROM alpine:3 as bookstack
 ENV BOOKSTACK_VERSION=0.29.3
 RUN apk add --no-cache curl tar
@@ -68,11 +69,13 @@ WORKDIR /var/www/bookstack
 # www-data
 USER 33
 
+#Chia sẻ dữ liệu giữa container (máy ảo) và host (máy thật) hoặc giữa các container với nhau.
 VOLUME ["/var/www/bookstack/public/uploads","/var/www/bookstack/storage/uploads"]
 
 ENV RUN_APACHE_USER=www-data \
     RUN_APACHE_GROUP=www-data
 
+# sử dụng port 8080 này trên docker
 EXPOSE 8080
 
 ENTRYPOINT ["/bin/docker-entrypoint.sh"]

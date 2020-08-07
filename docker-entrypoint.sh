@@ -1,4 +1,7 @@
 #!/bin/bash
+#Liệt kê những câu lệnh cần chạy sau khi bật container.
+
+#Chạy file sh với bash 
 set -e
 
 echoerr() { echo "$@" 1>&2; }
