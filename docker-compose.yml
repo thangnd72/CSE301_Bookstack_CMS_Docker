@@ -12,7 +12,6 @@ services:
 
   bookstack-cms:
     image: bookstack-cms
-    #Sử dụng khi chúng ta không xây dựng container từ image có sẵn nữa mà xây dựng nó từ Dockerfile.
     build: .
     ports: 
       - 8080:8080
